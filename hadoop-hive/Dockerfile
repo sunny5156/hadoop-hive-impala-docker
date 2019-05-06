@@ -26,8 +26,8 @@ RUN mkdir -p ~/hdfs/namenode && \
     mkdir -p ~/hdfs/datanode && \
     mkdir $HADOOP_HOME/logs
 
-COPY ./config/hadoop/* /tmp/hadoop
-COPY ./config/hive/* /tmp/hive
+ADD ./config/hadoop /tmp/
+ADD ./config/hive /tmp/
 
 RUN mv /tmp/hadoop/ssh_config ~/.ssh/config && \
     mv /tmp/hadoop/hadoop-env.sh /usr/local/hadoop/etc/hadoop/hadoop-env.sh && \
