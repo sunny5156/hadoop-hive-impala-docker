@@ -24,7 +24,7 @@ RUN ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && \
 
 RUN mkdir -p ~/hdfs/namenode && \ 
     mkdir -p ~/hdfs/datanode && \
-    mkdir $HADOOP_HOME/logs
+    mkdir -p $HADOOP_HOME/logs  /tmp/hadoop/ /tmp/hive/
 
 COPY ./config/hadoop/* /tmp/hadoop/
 COPY ./config/hive/* /tmp/hive/
